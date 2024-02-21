@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://borcyom0r8j1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdo0k"]
+size = Vector2(17.8503, 250.199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wooo"]
+size = Vector2(14.7189, 346.344)
+
+[node name="turret" type="Line2D"]
+position = Vector2(77, 71)
+scale = Vector2(0.784305, 0.983216)
+points = PackedVector2Array(179, 453, 518, 454, 516, 691, 181, 686, 184, 449)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(517.656, 572.611)
+shape = SubResource("RectangleShape2D_kdo0k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(181.052, 570.577)
+shape = SubResource("RectangleShape2D_kdo0k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(351.548, 453.499)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3wooo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(346.813, 688.317)
+rotation = 1.57768
+shape = SubResource("RectangleShape2D_3wooo")
