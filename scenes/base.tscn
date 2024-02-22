@@ -1,7 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://d6w8b1hs2tvi"]
+[gd_scene load_steps=7 format=3 uid="uid://d6w8b1hs2tvi"]
 
 [ext_resource type="PackedScene" uid="uid://bc2dmjl53gxbq" path="res://scenes/gun.tscn" id="1_jwyu2"]
+[ext_resource type="Texture2D" uid="uid://dd4euy17vcbop" path="res://assets/circle-out.png" id="2_4vljb"]
+[ext_resource type="Texture2D" uid="uid://cg1p4owb4i102" path="res://assets/circle-in.png" id="3_w0g21"]
+[ext_resource type="Texture2D" uid="uid://bco4t5yvwgam1" path="res://assets/circle-inn.png" id="4_dkl0l"]
 
-[node name="Base" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_oe881"]
+script/source = "extends StaticBody2D
 
-[node name="Gun" parent="." instance=ExtResource("1_jwyu2")]
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var vpr = get_viewport_rect().size
+	position.x = vpr.x/2
+	position.y = vpr.y/2
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2125"]
+radius = 111.71
+
+[node name="Base" type="StaticBody2D"]
+position = Vector2(53, 84)
+script = SubResource("GDScript_oe881")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i2125")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.221, 0.221)
+texture = ExtResource("2_4vljb")
+
+[node name="Gun" parent="Sprite2D2" instance=ExtResource("1_jwyu2")]
+position = Vector2(-7.62939e-06, 3.8147e-06)
+scale = Vector2(4.52489, 4.52489)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.901073, 0.901073)
+texture = ExtResource("3_w0g21")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D2/Sprite2D"]
+position = Vector2(4.76837e-06, 5.29099)
+scale = Vector2(0.556878, 0.556878)
+texture = ExtResource("4_dkl0l")

@@ -4,19 +4,20 @@
 [ext_resource type="Script" path="res://scripts/gun.gd" id="1_w3fab"]
 [ext_resource type="PackedScene" uid="uid://dom7fm0j2g38o" path="res://scenes/iceball.tscn" id="3_urmv5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_338cb"]
-size = Vector2(33.2996, 48.0065)
+[sub_resource type="CircleShape2D" id="CircleShape2D_skbah"]
 
 [node name="Gun" type="Area2D"]
 texture_filter = 1
 position = Vector2(392, 598)
 rotation = 0.732814
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_w3fab")
 bullet_scene = ExtResource("3_urmv5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.6897, 0.0340576)
-shape = SubResource("RectangleShape2D_338cb")
+shape = SubResource("CircleShape2D_skbah")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

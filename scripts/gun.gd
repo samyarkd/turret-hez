@@ -9,15 +9,8 @@ extends Area2D
 
 var can_fire = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	center_gun()
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	center_gun()
-	
 	var mouse = get_global_mouse_position()
 	look_at(mouse)
 	
@@ -34,7 +27,4 @@ func _process(delta):
 		await get_tree().create_timer(fire_rate).timeout
 		can_fire = true
 
-# center gun in the viewport
-func center_gun():
-	position.x = get_viewport_rect().size.x/2
-	position.y = get_viewport_rect().size.y/2
+
