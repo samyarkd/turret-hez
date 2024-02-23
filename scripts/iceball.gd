@@ -15,5 +15,6 @@ func set_roatation(custom_rotation: float):
 
 
 func _on_body_entered(body):
-	queue_free()
-	body.death()
+	if body.is_in_group('MobBot'):
+		queue_free()
+		body.death()

@@ -17,7 +17,7 @@ func _process(delta):
 	if Input.is_action_pressed("shoot") and can_fire:
 		# spawn a bullet
 		var bullet_instance = bullet_scene.instantiate()
-		bullet_instance.position = fire_aim.global_position
+		bullet_instance.position = Vector2.ZERO
 		bullet_instance.set_roatation(rotation)
 		# add bullet to the root
 		get_parent().add_child(bullet_instance)

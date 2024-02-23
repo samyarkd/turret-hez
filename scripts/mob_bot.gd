@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 
-@export var movement_speed = 20.0
+@export var movement_speed = 200.0
 @export var knockback_recovery = 3.5
 
 var knockback = Vector2.ZERO

@@ -146,6 +146,8 @@ size = Vector2(39.2308, 45.3846)
 [node name="MobBot" type="CharacterBody2D" groups=["MobBot"]]
 texture_filter = 1
 scale = Vector2(1, 1.00402)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_x5h4x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
