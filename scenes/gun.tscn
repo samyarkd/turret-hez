@@ -1,16 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc2dmjl53gxbq"]
+[gd_scene load_steps=10 format=3 uid="uid://bc2dmjl53gxbq"]
 
 [ext_resource type="Texture2D" uid="uid://ddpihx47qh2ij" path="res://assets/rpg_icons121.png" id="1_3mrin"]
 [ext_resource type="Script" path="res://scripts/gun.gd" id="1_w3fab"]
 [ext_resource type="PackedScene" uid="uid://dom7fm0j2g38o" path="res://scenes/iceball.tscn" id="3_urmv5"]
 [ext_resource type="AudioStream" uid="uid://7kqc2sv2bewp" path="res://sounds/magic.mp3" id="4_5o40d"]
+[ext_resource type="Texture2D" uid="uid://vnmsq2afeho4" path="res://assets/Blue Effect Bullet Impact Explosion 32x32.png" id="4_kc0lb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_skbah"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c2lc"]
+atlas = ExtResource("4_kc0lb")
+region = Rect2(96, 256, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytw3r"]
+atlas = ExtResource("4_kc0lb")
+region = Rect2(128, 256, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qexp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c2lc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytw3r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Gun" type="Area2D"]
 texture_filter = 1
-position = Vector2(392, 598)
-rotation = 0.732814
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_w3fab")
@@ -26,6 +47,14 @@ position = Vector2(62.2639, -0.263325)
 rotation = 0.785398
 scale = Vector2(3, 3)
 texture = ExtResource("1_3mrin")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(83.2028, -83.0786)
+rotation = -0.785398
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_2qexp")
+autoplay = "default"
+frame_progress = 0.620158
 
 [node name="FireAim" type="Marker2D" parent="."]
 position = Vector2(77.1297, -0.188928)

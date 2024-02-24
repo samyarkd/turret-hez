@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cggymx314r47s" path="res://assets/01.png" id="6_32d4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i2125"]
-radius = 108.71
+radius = 74.0068
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gulq"]
 atlas = ExtResource("6_32d4w")
@@ -82,14 +82,13 @@ animations = [{
 }]
 
 [node name="Base" type="Area2D"]
-position = Vector2(53, 84)
 script = ExtResource("1_e6tg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i2125")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(0.221, 0.221)
+scale = Vector2(0.1455, 0.1455)
 texture = ExtResource("2_4vljb")
 
 [node name="Gun" parent="Sprite2D2" instance=ExtResource("1_jwyu2")]

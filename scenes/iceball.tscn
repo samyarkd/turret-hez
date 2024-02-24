@@ -442,15 +442,15 @@ script = ExtResource("1_o5e22")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 rotation = -3.14159
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_s414f")
 animation = &"ice"
 autoplay = "ice"
 frame_progress = 0.421948
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(65, 0.999999)
+position = Vector2(32, -8.94069e-08)
 rotation = 1.74533
-polygon = PackedVector2Array(3.23588, -13.0203, 6.82107, 6.51713, 5.69996, 26.4104, -3.8381, 9.23412, -9.45062, -10.1826, -3.27429, -14.6383)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(5.79467, -13.2069, 5.69996, 26.4104, -9.45062, -10.1826, -2.77838, -15.7569)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
