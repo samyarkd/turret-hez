@@ -8,7 +8,7 @@ offset_top = 40.0
 offset_right = 266.0
 offset_bottom = 175.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="MobKilledLabel" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -21,4 +21,4 @@ offset_right = 91.0
 offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hello"
+text = "Points: 0"

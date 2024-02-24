@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc2dmjl53gxbq"]
+[gd_scene load_steps=6 format=3 uid="uid://bc2dmjl53gxbq"]
 
 [ext_resource type="Texture2D" uid="uid://ddpihx47qh2ij" path="res://assets/rpg_icons121.png" id="1_3mrin"]
 [ext_resource type="Script" path="res://scripts/gun.gd" id="1_w3fab"]
 [ext_resource type="PackedScene" uid="uid://dom7fm0j2g38o" path="res://scenes/iceball.tscn" id="3_urmv5"]
+[ext_resource type="AudioStream" uid="uid://7kqc2sv2bewp" path="res://sounds/magic.mp3" id="4_5o40d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_skbah"]
 
@@ -31,3 +32,6 @@ position = Vector2(77.1297, -0.188928)
 
 [node name="AimAngle" type="Marker2D" parent="."]
 position = Vector2(130.299, -0.222862)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5o40d")

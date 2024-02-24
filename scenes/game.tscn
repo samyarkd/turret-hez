@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://25l21squan1a"]
+[gd_scene load_steps=10 format=3 uid="uid://25l21squan1a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_gutmt"]
 [ext_resource type="PackedScene" uid="uid://b21ikwkka0l6e" path="res://scenes/mob_spawner.tscn" id="2_1dsbn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/spawn_info.gd" id="4_usi2b"]
 [ext_resource type="PackedScene" uid="uid://d6w8b1hs2tvi" path="res://scenes/base.tscn" id="5_1cxot"]
 [ext_resource type="PackedScene" uid="uid://c2voqyww0bnn6" path="res://scenes/hud.tscn" id="5_kjjhi"]
+[ext_resource type="Script" path="res://scripts/DeadMobs.gd" id="6_n15wg"]
 [ext_resource type="PackedScene" uid="uid://c01tum4ccleom" path="res://scenes/game_over_display.tscn" id="7_luydq"]
 
 [sub_resource type="Resource" id="Resource_1y6at"]
@@ -24,6 +25,7 @@ scale = Vector2(1.00346, 0.96256)
 spawns = Array[ExtResource("4_usi2b")]([SubResource("Resource_1y6at")])
 
 [node name="HUD" parent="." instance=ExtResource("5_kjjhi")]
+script = ExtResource("6_n15wg")
 
 [node name="Base" parent="." instance=ExtResource("5_1cxot")]
 

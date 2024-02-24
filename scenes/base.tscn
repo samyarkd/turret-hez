@@ -1,13 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://d6w8b1hs2tvi"]
+[gd_scene load_steps=18 format=3 uid="uid://d6w8b1hs2tvi"]
 
 [ext_resource type="Script" path="res://scripts/base.gd" id="1_e6tg2"]
 [ext_resource type="PackedScene" uid="uid://bc2dmjl53gxbq" path="res://scenes/gun.tscn" id="1_jwyu2"]
 [ext_resource type="Texture2D" uid="uid://dd4euy17vcbop" path="res://assets/circle-out.png" id="2_4vljb"]
 [ext_resource type="Texture2D" uid="uid://cg1p4owb4i102" path="res://assets/circle-in.png" id="3_w0g21"]
 [ext_resource type="Texture2D" uid="uid://bco4t5yvwgam1" path="res://assets/circle-inn.png" id="4_dkl0l"]
+[ext_resource type="Texture2D" uid="uid://cggymx314r47s" path="res://assets/01.png" id="6_32d4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i2125"]
 radius = 108.71
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gulq"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnht0"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijcb4"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm8px"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5ek"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhppb"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvthl"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdgt7"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyk06"]
+atlas = ExtResource("6_32d4w")
+region = Rect2(576, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfjol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gulq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnht0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijcb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm8px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs5ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhppb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvthl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdgt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyk06")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="Base" type="Area2D"]
 position = Vector2(53, 84)
@@ -33,5 +105,12 @@ texture = ExtResource("3_w0g21")
 position = Vector2(4.76837e-06, 5.29099)
 scale = Vector2(0.556878, 0.556878)
 texture = ExtResource("4_dkl0l")
+
+[node name="TowerTopEffect" type="AnimatedSprite2D" parent="Sprite2D2/Sprite2D/Sprite2D3"]
+position = Vector2(-4.50879, 4.50879)
+scale = Vector2(12.54, 12.54)
+sprite_frames = SubResource("SpriteFrames_mfjol")
+frame = 8
+frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
