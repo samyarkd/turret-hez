@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://byfson8q7qarm"]
+
+[ext_resource type="Script" path="res://scripts/Auth.gd" id="1_duh8n"]
+[ext_resource type="Script" path="res://scripts/ServerConnection.gd" id="2_fttn4"]
+
+[node name="Auth" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 417.0
+offset_right = -160.0
+offset_bottom = -417.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_duh8n")
+
+[node name="ServerConnection" type="Node" parent="."]
+script = ExtResource("2_fttn4")
+
+[node name="SignUpLogin" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Login" type="Control" parent="SignUpLogin"]
+layout_mode = 2
+
+[node name="Form" type="VBoxContainer" parent="SignUpLogin/Login"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -68.0
+offset_right = 181.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Email" type="LineEdit" parent="SignUpLogin/Login/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Enter your Email"
+language = "en_Us"
+structured_text_bidi_override = 3
+
+[node name="Password" type="LineEdit" parent="SignUpLogin/Login/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Password"
+secret = true
+language = "en_US"
+
+[node name="Submit" type="Button" parent="SignUpLogin/Login/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Login"
+
+[node name="Error" type="Label" parent="SignUpLogin/Login/Form"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+language = "en_US"
+
+[node name="Register" type="Control" parent="SignUpLogin"]
+visible = false
+layout_mode = 2
+
+[node name="Form" type="VBoxContainer" parent="SignUpLogin/Register"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -87.5
+offset_right = 181.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Email" type="LineEdit" parent="SignUpLogin/Register/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Enter your Email"
+language = "en_US"
+structured_text_bidi_override = 3
+
+[node name="Password" type="LineEdit" parent="SignUpLogin/Register/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Password"
+secret = true
+
+[node name="RepeatPassword" type="LineEdit" parent="SignUpLogin/Register/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Repeat Password"
+secret = true
+language = "en_US"
+
+[node name="Submit" type="Button" parent="SignUpLogin/Register/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Submit"
+
+[node name="Error" type="Label" parent="SignUpLogin/Register/Form"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[connection signal="pressed" from="SignUpLogin/Login/Form/Submit" to="." method="_on_login_submit_pressed"]
+[connection signal="pressed" from="SignUpLogin/Register/Form/Submit" to="." method="_on_register_submit_pressed"]

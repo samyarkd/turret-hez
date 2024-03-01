@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="TurretHez"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/auth.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 EventBus="*res://scripts/EventBus.gd"
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 
 [display]
 
