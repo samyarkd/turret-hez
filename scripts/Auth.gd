@@ -13,10 +13,6 @@ extends Control
 @onready var su_btn = $SignUpLogin/Register/Form/Submit
 @onready var su_error = $SignUpLogin/Register/Form/Error
 
-func _process(delta):
-	if server_connection._session:
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-
 func request_authentication():
 	var email = lg_email.text
 	var password = lg_password.text
